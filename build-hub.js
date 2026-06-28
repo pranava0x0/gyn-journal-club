@@ -1,4 +1,44 @@
-<!DOCTYPE html>
+// Generates the homepage hub (root index.html): a list of journal clubs, each with its issues.
+// Scans issues/<editionId>/<date>.{html,pdf,docx} and links Website / PDF / Word per issue.
+const fs = require("fs");
+const path = require("path");
+const editions = require("./content/editions");
+
+const root = path.join(__dirname, "issues");
+const fmt = (d) => new Date(d + "T12:00:00").toLocaleDateString("en-US",
+  { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+
+function clubSection(ed) {
+  const dir = path.join(root, ed.id);
+  let dates = [];
+  if (fs.existsSync(dir)) {
+    dates = [...new Set(fs.readdirSync(dir)
+      .map((f) => (f.match(/^(\d{4}-\d{2}-\d{2})\./) || [])[1]).filter(Boolean))]
+      .sort().reverse();
+  }
+  const has = (d, ext) => fs.existsSync(path.join(dir, `${d}.${ext}`));
+  const rows = dates.map((d, i) => {
+    const links = [
+      has(d, "html") ? `<a href="issues/${ed.id}/${d}.html">Read online</a>` : "",
+      has(d, "pdf") ? `<a href="issues/${ed.id}/${d}.pdf">PDF</a>` : "",
+      has(d, "docx") ? `<a href="issues/${ed.id}/${d}.docx">Word</a>` : "",
+    ].filter(Boolean).join(' <span class="dot">·</span> ');
+    const badge = i === 0 ? '<span class="badge">Latest</span>' : "";
+    return `        <li><span class="d">${fmt(d)} ${badge}</span><span class="lk">${links}</span></li>`;
+  }).join("\n");
+  const focus = ed.content.meta.blurb.split(".")[0] + ".";
+  return `      <section class="club">
+        <h2>${ed.content.meta.title}</h2>
+        <p class="focus">${focus}</p>
+        <ul>
+${rows || '          <li class="empty">No issues yet.</li>'}
+        </ul>
+      </section>`;
+}
+
+const sections = editions.map(clubSection).join("\n");
+
+const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -39,21 +79,12 @@
   <div class="tagline">Monthly clinical journal clubs for OB/GYN &amp; Family Medicine. Pick a club, then an issue — read online or download the PDF / Word.</div>
 </div></header>
 <div class="wrap">
-      <section class="club">
-        <h2>GYN Journal Club</h2>
-        <p class="focus">A clinical digest for OB/GYN and Family Medicine colleagues.</p>
-        <ul>
-        <li><span class="d">Saturday, June 27, 2026 <span class="badge">Latest</span></span><span class="lk"><a href="issues/gyn/2026-06-27.html">Read online</a> <span class="dot">·</span> <a href="issues/gyn/2026-06-27.pdf">PDF</a> <span class="dot">·</span> <a href="issues/gyn/2026-06-27.docx">Word</a></span></li>
-        </ul>
-      </section>
-      <section class="club">
-        <h2>Benign GYN Surgery Journal Club</h2>
-        <p class="focus">A clinical digest on benign gynecologic surgery for gynecologists.</p>
-        <ul>
-        <li><span class="d">Saturday, June 27, 2026 <span class="badge">Latest</span></span><span class="lk"><a href="issues/benign-surgery/2026-06-27.html">Read online</a> <span class="dot">·</span> <a href="issues/benign-surgery/2026-06-27.pdf">PDF</a> <span class="dot">·</span> <a href="issues/benign-surgery/2026-06-27.docx">Word</a></span></li>
-        </ul>
-      </section>
+${sections}
 </div>
 <footer><div>Independent educational digests; not affiliated with or endorsed by the named journals or societies.</div></footer>
 </body>
 </html>
+`;
+
+fs.writeFileSync(path.join(__dirname, "index.html"), html);
+console.log(`wrote index.html (hub · ${editions.length} journal clubs)`);

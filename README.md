@@ -3,10 +3,14 @@
 **Monthly**, clinically-rigorous journal-club newsletters for OB/GYN and Family Medicine colleagues.
 There are two **editions**, each its own content file rendered into three formats:
 
-| Edition | Content file | Website | Focus |
-|---|---|---|---|
-| **GYN** (general) | `content/issue.js` | `index.html` | Broad gynecology — screening, menopause, medical + procedural |
-| **Benign GYN Surgery** | `content/benign-surgery.js` | `benign-gyn-surgery.html` | MIS hysterectomy, endometriosis, fibroids, prolapse, perioperative |
+| Edition (journal club) | Content file | Focus |
+|---|---|---|
+| **GYN** (general) | `content/issue.js` | Broad gynecology — screening, menopause, medical + surgical, urogyn |
+| **Benign GYN Surgery** | `content/benign-surgery.js` | MIS hysterectomy, endometriosis, fibroids, prolapse, perioperative |
+
+The site homepage (`index.html`) is a **hub** listing every journal club and its issues; each issue's web page
+lives at `issues/<id>/<date>.html` with its PDF/Word beside it. Pick a club, then an issue — no toggling between
+separate pages.
 
 Source priority: **JMIG**, the **Green Journal** (Obstetrics & Gynecology), and **Menopause** (The Menopause
 Society); issues also scan **AJOG** (Gray Journal), **JAMA**, **NEJM**, **AAGL**, and **AAFP** for current
@@ -20,19 +24,21 @@ exportable Word file. Edit content in **one place** per edition; all three regen
 ## Editions → three outputs each
 
 ```
-content/editions.js   ← registry of editions (id, content file, html name, output basename)
-content/issue.js            content/benign-surgery.js     ← EDIT CONTENT HERE ONLY
-   │                              │
-   ├─ build-web.js  → index.html │  ├─ build-web.js  → benign-gyn-surgery.html      (website)
-   ├─ Chrome        → ...gyn.pdf │  ├─ Chrome        → ...benign...pdf              (PDF)
-   └─ build-docx.js → ...gyn.docx│  └─ build-docx.js → ...benign...docx             (Word)
+content/editions.js   ← registry of journal clubs (id, content file, download basename)
+content/<id>.js       ← EDIT CONTENT HERE ONLY
+   │
+   ├─ build-web.js   → issues/<id>/<date>.html         (issue web page)
+   ├─ Chrome         → <base>-<date>.pdf  (+ archive copy)   (PDF)
+   └─ build-docx.js  → <base>-<date>.docx (+ archive copy)   (Word)
+
+build-hub.js          → index.html   (homepage: lists every club and its issues)
 ```
 
-Build **all editions, all formats** at once:
+Build **all clubs, all formats** at once:
 
 ```bash
-./build.sh                 # builds every edition in content/editions.js
-node build-web.js <id>     # rebuild one edition's website (id = gyn | benign-surgery)
+./build.sh                 # builds every club in content/editions.js, then the homepage hub
+node build-web.js <id>     # rebuild one club's current issue page (id = gyn | benign-surgery)
 ```
 
 **Add a new edition:** write `content/<name>.js` (copy an existing one's shape), add a row to
@@ -101,9 +107,12 @@ educational digests; not affiliated with or endorsed by the named journals or so
 - `content/editions.js` — edition registry
 - `content/issue.js`, `content/benign-surgery.js` — content (single source of truth per edition)
 - `content/covered.<id>.json` — per-edition no-repeat ledgers (generated; don't hand-edit)
-- `build-web.js`, `build-docx.js`, `build-archive.js`, `build.sh` — generators
+- `build-web.js`, `build-docx.js`, `build-hub.js`, `build.sh` — generators
 - `dedup-check.js`, `record-issue.js`, `lib/ledger.js` — no-repeat machinery
-- `index.html`, `benign-gyn-surgery.html`, `*.pdf`, `*.docx` — generated outputs
-- `issues/<id>/<date>.*` + `issues/index.html` — archive
+- `index.html` — homepage hub (lists every club + issue)
+- `issues/<id>/<date>.{html,pdf,docx}` — each issue's page + downloads
+- `<base>-<date>.{pdf,docx}` — current-issue download files at repo root
+- `security.md` — supply-chain advisory sweep cache
+- `.claude/launch.json` — local preview server config
 - `security.md` — supply-chain advisory sweep cache
 - `.claude/launch.json` — local preview server config

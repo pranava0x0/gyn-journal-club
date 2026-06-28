@@ -189,6 +189,7 @@ const html = `<!DOCTYPE html>
     :root{--bg:#fff}
     body{background:#fff;font-size:10.5pt;line-height:1.42}
     .utility{display:none}
+    .sitenav{display:none}
     a{color:#000;text-decoration:none}
     .masthead{border-bottom-width:4px}
     main{padding:0;max-width:none}
@@ -215,9 +216,7 @@ const html = `<!DOCTYPE html>
 </div></header>
 <div class="goldrule" aria-hidden="true"></div>
 <nav class="sitenav">
-  <a href="index.html"${id === "gyn" ? ' class="cur"' : ""}>GYN edition</a>
-  <a href="benign-gyn-surgery.html"${id === "benign-surgery" ? ' class="cur"' : ""}>Benign Surgery edition</a>
-  <a href="issues/index.html">Past issues &amp; downloads</a>
+  <a href="../../index.html">&larr; All journal clubs &amp; issues</a>
 </nav>
 
 <main>
@@ -255,5 +254,8 @@ const html = `<!DOCTYPE html>
 </html>
 `;
 
-fs.writeFileSync(path.join(__dirname, ed.html), html);
-console.log(`wrote ${ed.html} (${html.length} bytes) [${id}]`);
+const outRel = path.join("issues", id, `${issue.meta.asOf}.html`);
+const outAbs = path.join(__dirname, outRel);
+fs.mkdirSync(path.dirname(outAbs), { recursive: true });
+fs.writeFileSync(outAbs, html);
+console.log(`wrote ${outRel} (${html.length} bytes) [${id}]`);
