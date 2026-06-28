@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benign GYN Surgery Journal Club · Friday, June 27, 2026</title>
+<meta name="description" content="A clinical digest on benign gynecologic surgery for gynecologists. Each issue distills practice-relevant minimally invasive and reconstructive GYN surgery — and the medical management that competes with it — across hysterectomy, endometriosis, fibroids, prolapse and urogynecology, drawing on US and European sources, with space after every article for your own notes and group discussion.">
+<style>
+  :root{
+    --red:#1F3A5F;      /* edition primary */
+    --red-dk:#14283F; /* deep primary — headings */
+    --gold:#4E7CA8;      /* secondary accent rule */
+    --ink:#1a1a1a;
+    --muted:#5a5a5a;
+    --rule:#d8d8d8;
+    --bg:#f5f4f3;
+    --paper:#ffffff;
+    --red-tint:#EEF2F8;
+    --red-line:#CDD9EA;
+    --impl:#3f6b2e; --impl-tint:#eef4ec; --impl-line:#d3e3cb;
+    --caveat:#8a5a00; --caveat-tint:#fbf4e5; --caveat-line:#ecd9b6;
+    --gray-tint:#f2f2f2;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--red);text-underline-offset:2px}
+  a:focus-visible,[contenteditable]:focus-visible{outline:3px solid var(--red);outline-offset:2px;border-radius:2px}
+
+  .utility{background:var(--red-dk);color:#f6dcdf;font-size:12.5px;letter-spacing:.04em}
+  .utility .wrap{max-width:var(--maxw);margin:0 auto;padding:7px 22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .utility strong{color:#fff;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+  .masthead{background:var(--paper);border-bottom:4px solid var(--red)}
+  .goldrule{height:3px;background:var(--gold)}
+  .masthead .wrap{max-width:var(--maxw);margin:0 auto;padding:22px 22px 16px}
+  .masthead h1{margin:0;font-size:38px;letter-spacing:-.01em;color:var(--red-dk);font-weight:800;line-height:1}
+  .masthead .org{margin-top:8px;font-size:17px;font-weight:700;color:var(--ink)}
+  .masthead .dl{margin-top:6px;font-size:12.5px;color:var(--muted)}
+  .masthead .byline{margin-top:7px;font-size:13px;font-weight:700;color:var(--red-dk)}
+
+  main{max-width:var(--maxw);margin:0 auto;padding:18px 22px 40px}
+
+  .blurb{background:var(--red-tint);border:1px solid var(--red-line);border-left:5px solid var(--red);
+    border-radius:8px;padding:14px 16px;font-size:15.5px}
+  .resources{margin:14px 2px 0;font-size:14.5px}
+  .resources b{color:var(--red-dk)}
+  .resources a{font-weight:600;white-space:nowrap}
+  .resources .dot{color:var(--muted);margin:0 9px}
+
+  .barhead{margin:30px 0 14px;background:var(--red);color:#fff;border-radius:4px;
+    padding:7px 13px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+
+  .lead{background:linear-gradient(180deg,var(--red-tint),#fff);border:1px solid var(--red-line);
+    border-left:6px solid var(--red);border-radius:8px;padding:18px 20px}
+  .lead h2{margin:0 0 8px;font-size:24px;line-height:1.22;color:var(--red-dk);letter-spacing:-.01em}
+  .lead p{margin:8px 0 0}
+  .lead .why{margin-top:13px;padding-top:12px;border-top:1px dashed var(--red-line);font-size:15.5px}
+  .lead .why b{color:var(--red-dk)}
+  .lead .src{margin-top:11px;font-size:12.5px}
+
+  .card{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;margin-bottom:16px}
+  .card h3{margin:0 0 6px;font-size:19px;line-height:1.28;color:var(--ink)}
+  .meta{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .meta .lane{color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:11.5px}
+  .meta .tag{display:inline-block;background:var(--red-tint);color:var(--red-dk);border:1px solid var(--red-line);
+    border-radius:20px;padding:1px 9px;font-weight:700;font-size:11px;margin:0 4px;vertical-align:1px}
+  .meta .metatxt{font-style:italic}
+  .row{margin:9px 0}
+  .label{display:inline-block;font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--red-dk);margin-right:6px}
+  .row.impl{background:var(--impl-tint);border:1px solid var(--impl-line);border-radius:6px;padding:10px 12px}
+  .row.impl .label{color:var(--impl)}
+  .row.caveat{background:var(--caveat-tint);border:1px solid var(--caveat-line);border-radius:6px;padding:10px 12px}
+  .row.caveat .label{color:var(--caveat)}
+  .src{font-size:12.5px;margin-top:11px}
+  .src a{font-weight:600}
+
+  .comments{margin-top:13px;background:var(--gray-tint);border:1px solid var(--red);border-radius:7px;padding:11px 13px}
+  .comments-label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red-dk);margin-bottom:6px}
+  .comments-body{min-height:64px;background:#fff;border:1px dashed var(--rule);border-radius:5px;padding:8px 10px;font-size:14.5px;line-height:1.55}
+  .comments-body:empty::before{content:attr(data-ph);color:var(--muted);font-style:italic}
+
+  .hitgroup{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red-dk);margin:16px 0 8px}
+  .hits{list-style:none;margin:0;padding:0}
+  .hits li{background:var(--paper);border:1px solid var(--rule);border-left:4px solid var(--red);
+    border-radius:6px;padding:12px 15px;margin-bottom:10px}
+  .hits .hn{font-size:14.5px}
+  .hits .qsrc{font-weight:800;color:var(--red)}
+  .hits .src{margin-top:5px}
+
+  footer{border-top:3px solid var(--red);margin-top:34px;background:var(--paper)}
+  footer .wrap{max-width:var(--maxw);margin:0 auto;padding:18px 22px 32px}
+  .disclaimer{background:var(--caveat-tint);border:1px solid var(--caveat-line);border-radius:7px;
+    padding:12px 14px;font-size:13px;color:#5a4218;line-height:1.55}
+  .disclaimer b{color:var(--caveat)}
+  .colophon{font-size:12.5px;color:var(--muted);margin-top:14px;line-height:1.6}
+  .note{font-size:12px;color:var(--muted);margin-top:6px;font-style:italic}
+
+  @media (max-width:560px){
+    body{font-size:16px}
+    .masthead h1{font-size:30px}
+    .lead h2{font-size:20px}
+    .card h3{font-size:17px}
+    main{padding:16px}
+    .masthead .wrap,.utility .wrap,footer .wrap{padding-left:16px;padding-right:16px}
+    .resources a{white-space:normal}
+  }
+
+  /* ---- print / PDF ---- */
+  @page{size:Letter;margin:14mm 16mm}
+  @media print{
+    :root{--bg:#fff}
+    body{background:#fff;font-size:10.5pt;line-height:1.42}
+    .utility{display:none}
+    a{color:#000;text-decoration:none}
+    .masthead{border-bottom-width:4px}
+    main{padding:0;max-width:none}
+    .card,.lead,.hits li,.blurb,.comments{break-inside:avoid}
+    .card + .card{break-before:page}   /* each breakdown article starts on its own page */
+    .barhead{break-after:avoid}
+    .comments-body{min-height:54px}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="wrap">
+  <span><strong>Benign GYN Surgery Journal Club</strong></span>
+  <span>For gynecologists</span>
+</div></div>
+
+<header class="masthead"><div class="wrap">
+  <h1>Benign GYN Surgery Journal Club</h1>
+  <div class="org">An independent monthly journal club for gynecologists</div>
+  <div class="dl">Issue · Friday, June 27, 2026 &nbsp;|&nbsp; Sources as of 2026-06-27 &nbsp;|&nbsp; For gynecologists</div>
+  <div class="byline">Compiled &amp; distributed by Pooja Uppalapati, MD, MBA</div>
+</div></header>
+<div class="goldrule" aria-hidden="true"></div>
+
+<main>
+  <div class="blurb">A clinical digest on benign gynecologic surgery for gynecologists. Each issue distills practice-relevant minimally invasive and reconstructive GYN surgery — and the medical management that competes with it — across hysterectomy, endometriosis, fibroids, prolapse and urogynecology, drawing on US and European sources, with space after every article for your own notes and group discussion.</div>
+  <div class="resources"><b>Journal access &amp; resources:</b> <a href="https://www.jmig.org">JMIG</a><span class="dot">·</span><a href="https://www.aagl.org">AAGL</a><span class="dot">·</span><a href="https://www.bsge.org.uk">BSGE (UK)</a><span class="dot">·</span><a href="https://journals.lww.com/greenjournal">Obstetrics &amp; Gynecology (Green)</a><span class="dot">·</span><a href="https://www.ajog.org">AJOG (Gray)</a><span class="dot">·</span><a href="https://obgyn.onlinelibrary.wiley.com/journal/14710528">BJOG</a><span class="dot">·</span><a href="https://link.springer.com/journal/192">Int Urogynecology Journal</a><span class="dot">·</span><a href="https://www.ejog.org">Eur J Obstet Gynecol (EJOG)</a><span class="dot">·</span><a href="https://jamanetwork.com/journals/jamasurgery">JAMA Surgery</a><span class="dot">·</span><a href="https://www.aafp.org/pubs/afp.html">AAFP / Am Fam Physician</a></div>
+
+  <div class="barhead">The Lead Story · Big-Picture Trend</div>
+  <section class="lead">
+    <h2>Outpatient by default: ERAS plus minimally invasive routes make same-day discharge the benchmark for benign hysterectomy</h2>
+    <p>Benign hysterectomy is one of the most common operations in women’s health, and its standard of care has shifted decisively to ambulatory, minimally invasive surgery on an enhanced-recovery (ERAS) pathway. The 2026 ERAS Society update and a growing body of same-day-discharge evidence converge on a target of roughly 90% same-day discharge for benign minimally invasive cases — without higher complication or readmission rates — by omitting bowel prep and routine voiding trials, using multimodal opioid-sparing analgesia, and selecting patients deliberately. New route options (vNOTES) and technique refinements (intracorporeal cuff closure) widen who qualifies.</p>
+    <p class="why"><b>Why it matters at the bedside:</b> the rate-limiting steps are now operational, not surgical: an ERAS order set, a PACU discharge protocol, patient education, and a next-day phone-call safety net. Build those and same-day discharge becomes routine rather than exceptional — shorter stays, lower cost, equal safety. Watch the levers that still gate it: late OR start, longer operative time, and specific comorbidities (which the data flag as the real predictors of failed same-day discharge).</p>
+    <div class="src">Source: <a href="https://www.sciencedirect.com/science/article/pii/S0090825826019992">ERAS Society guidelines, 2026 update (ScienceDirect)</a></div>
+  </section>
+
+  <div class="barhead">The Breakdown · Article Summaries</div>
+  
+    <article class="card">
+      <h3>1. Same-day discharge after minimally invasive hysterectomy</h3>
+      <div class="meta"><span class="lane">JMIG · J. Minimally Invasive Gynecology</span> <span class="tag">Systematic review</span><span class="tag">Meta-analysis</span>
+        <span class="metatxt">Systematic review &amp; meta-analysis · abstract only</span></div>
+      <div class="row"><span class="label">Core finding</span>Same-day discharge after laparoscopic or robotic hysterectomy is feasible and safe versus next-day discharge, with no significant increase in complications or readmissions; the predictors of a failed same-day discharge are modifiable or identifiable (late OR start, longer operative time, higher age/BMI, specific comorbidities).</div>
+      <div class="row impl"><span class="label">Clinical implications</span>Default to same-day discharge for benign MIS hysterectomy in appropriately selected patients. Build an ERAS order set (no bowel prep, no routine voiding trial), a PACU discharge checklist, and a next-day call — and use the known predictors to triage who stays overnight.</div>
+      <div class="row caveat"><span class="label">Paywall caveat</span>Verify the pooled readmission and reoperation rates, how “appropriately selected” was defined, the absolute same-day discharge rate achieved, and whether robotic vs laparoscopic differed.</div>
+      <div class="src">Source: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10803482/">Same-day discharge meta-analysis (PMC)</a></div>
+      
+      <div class="comments">
+        <div class="comments-label">Discussion / Comments</div>
+        <div class="comments-body" contenteditable="true" role="textbox" aria-multiline="true"
+             aria-label="Discussion / Comments" data-ph="Click and type to add your notes, questions, or how this changes your practice…"></div>
+      </div>
+    </article>
+    <article class="card">
+      <h3>2. vNOTES versus conventional vaginal hysterectomy for benign indications</h3>
+      <div class="meta"><span class="lane">JMIG · J. Minimally Invasive Gynecology</span> <span class="tag">Prospective RCT</span><span class="tag">Abstract only</span>
+        <span class="metatxt">Prospective randomized controlled trial · abstract only</span></div>
+      <div class="row"><span class="label">Core finding</span>Vaginal natural orifice transluminal endoscopic surgery (vNOTES) was compared head-to-head with conventional vaginal hysterectomy for benign disease, evaluating operative time, complications, adnexal access, and recovery.</div>
+      <div class="row impl"><span class="label">Clinical implications</span>Adds structured evidence to the route decision. vNOTES extends adnexal access and visualization beyond the conventional vaginal approach — useful for case selection (e.g., when concurrent salpingectomy or adnexal work is planned) and for credentialing discussions as adoption spreads.</div>
+      <div class="row caveat"><span class="label">Paywall caveat</span>Verify operative time, complication and conversion rates, pain/recovery outcomes, and whether the trial was single-center with a limited sample (learning-curve and generalizability effects).</div>
+      <div class="src">Source: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12680420/">vNOTES vs vaginal hysterectomy RCT (PMC)</a></div>
+      
+      <div class="comments">
+        <div class="comments-label">Discussion / Comments</div>
+        <div class="comments-body" contenteditable="true" role="textbox" aria-multiline="true"
+             aria-label="Discussion / Comments" data-ph="Click and type to add your notes, questions, or how this changes your practice…"></div>
+      </div>
+    </article>
+    <article class="card">
+      <h3>3. Long-term safety of the mid-urethral sling for stress urinary incontinence (French national data)</h3>
+      <div class="meta"><span class="lane">eClinicalMedicine · Lancet (France)</span> <span class="tag">Target-trial emulation</span><span class="tag">National cohort</span>
+        <span class="metatxt">Target-trial emulation · French national health data system · 2025</span></div>
+      <div class="row"><span class="label">Core finding</span>Across the French national health data system, mid-urethral sling placement carried low long-term mesh removal/revision rates, with the transobturator (TOT) route modestly lower than retropubic (TVT) at 5 years (≈3.3% vs 4.1% cumulative removal/section).</div>
+      <div class="row impl"><span class="label">Clinical implications</span>Robust real-world safety data for SUI counseling and consent: serious mesh complications are uncommon and route choice modestly shifts revision risk. A current, large-scale counterweight to mesh anxiety carried over from the transvaginal-mesh controversy — distinct from POP mesh.</div>
+      <div class="row caveat"><span class="label">Paywall caveat</span>Emulated (non-randomized) design — residual confounding by indication and surgeon experience remains. Verify how complications were captured in claims data and the absolute event rates before quoting figures.</div>
+      <div class="src">Source: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12496164/">Mid-urethral sling safety, French national data (PMC)</a></div>
+      
+      <div class="comments">
+        <div class="comments-label">Discussion / Comments</div>
+        <div class="comments-body" contenteditable="true" role="textbox" aria-multiline="true"
+             aria-label="Discussion / Comments" data-ph="Click and type to add your notes, questions, or how this changes your practice…"></div>
+      </div>
+    </article>
+    <article class="card">
+      <h3>4. Medical management versus surgery for deep infiltrating endometriosis (DIAMOND)</h3>
+      <div class="meta"><span class="lane">DIAMOND · HTA randomized trial</span> <span class="tag">RCT</span><span class="tag">Very small sample</span>
+        <span class="metatxt">Health Technology Assessment RCT · January 2026 · abstract only</span></div>
+      <div class="row"><span class="label">Core finding</span>DIAMOND randomized patients with deep infiltrating endometriosis to early planned laparoscopic excision versus optimized medical management, assessing clinical and cost-effectiveness — but only 18 patients were randomized, so it is severely underpowered.</div>
+      <div class="row impl"><span class="label">Clinical implications</span>Useful for shared decision-making conversations — it frames surgery and optimized medical therapy as legitimate competing first steps for DIE rather than assuming surgery is always superior. Do not let it drive a definitive change; use it to support individualized counseling while larger trials mature.</div>
+      <div class="row caveat"><span class="label">Paywall caveat</span>n = 18 is the headline limitation: no reliable effect estimate or non-inferiority claim is possible. Verify the primary endpoint, crossover rate, and whether a larger trial is planned before citing it to patients.</div>
+      <div class="src">Source: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12884356/">DIAMOND RCT synopsis (PMC)</a></div>
+      
+      <div class="comments">
+        <div class="comments-label">Discussion / Comments</div>
+        <div class="comments-body" contenteditable="true" role="textbox" aria-multiline="true"
+             aria-label="Discussion / Comments" data-ph="Click and type to add your notes, questions, or how this changes your practice…"></div>
+      </div>
+    </article>
+    <article class="card">
+      <h3>5. Sacrocolpopexy versus native-tissue repair for apical prolapse</h3>
+      <div class="meta"><span class="lane">Urogynecology · apical prolapse repair</span> <span class="tag">Comparative study</span><span class="tag">Abstract only</span>
+        <span class="metatxt">Comparative outcomes study · abstract only</span></div>
+      <div class="row"><span class="label">Core finding</span>Apical suspension by sacrocolpopexy showed a substantially lower surgical failure rate than native-tissue repair (reported around 6% vs 21%), with fewer symptomatic and anatomic recurrences over follow-up.</div>
+      <div class="row impl"><span class="label">Clinical implications</span>Counsel on the durability trade-off: sacrocolpopexy (mesh) offers better anatomic durability, native-tissue repair avoids mesh-related risk. Match the procedure to the patient’s priorities, activity, and risk tolerance, and document the shared decision — especially given the FDA history on transvaginal mesh.</div>
+      <div class="row caveat"><span class="label">Paywall caveat</span>Much of this evidence is retrospective/observational; verify follow-up duration, mesh-exposure rates (often not captured in failure counts), and whether populations were comparable before generalizing.</div>
+      <div class="src">Source: <a href="https://www.nature.com/articles/s41598-021-82732-0">Native tissue vs sacrocolpopexy outcomes (Scientific Reports)</a></div>
+      
+      <div class="comments">
+        <div class="comments-label">Discussion / Comments</div>
+        <div class="comments-body" contenteditable="true" role="textbox" aria-multiline="true"
+             aria-label="Discussion / Comments" data-ph="Click and type to add your notes, questions, or how this changes your practice…"></div>
+      </div>
+    </article>
+    <article class="card">
+      <h3>6. Opportunistic salpingectomy at sterilisation and benign hysterectomy (SALSTER; HOPPSA)</h3>
+      <div class="meta"><span class="lane">JMIG · J. Minimally Invasive Gynecology</span> <span class="tag">Register-based RCT</span><span class="tag">Abstract only</span>
+        <span class="metatxt">Register-based randomized trials · abstract only</span></div>
+      <div class="row"><span class="label">Core finding</span>In SALSTER, opportunistic salpingectomy at laparoscopic sterilisation did not raise peri- or postoperative complications beyond the pre-defined non-inferiority margin through 8 weeks; HOPPSA evaluates the same approach added to benign hysterectomy for ovarian-cancer risk reduction.</div>
+      <div class="row impl"><span class="label">Clinical implications</span>Routinely offer opportunistic salpingectomy at sterilisation and benign pelvic surgery in patients who have completed childbearing. Add it to surgical consent and counseling as a safe ovarian-cancer-risk-reduction step.</div>
+      <div class="row caveat"><span class="label">Paywall caveat</span>Verify exact complication rates and the margin, added operative time/blood loss, and note the long-term ovarian-cancer-incidence endpoint is still maturing — risk reduction is inferred, not yet proven by these trials.</div>
+      <div class="src">Source: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11838100/">SALSTER trial (PMC)</a></div>
+      
+      <div class="comments">
+        <div class="comments-label">Discussion / Comments</div>
+        <div class="comments-body" contenteditable="true" role="textbox" aria-multiline="true"
+             aria-label="Discussion / Comments" data-ph="Click and type to add your notes, questions, or how this changes your practice…"></div>
+      </div>
+    </article>
+
+  <div class="barhead">Quick Hits · Emerging Data on the Radar</div>
+  <ul class="hits">
+      <li>
+        <div class="hn"><span class="qsrc">[NEJM · Medical (fibroids)]</span> Relugolix combination therapy (LIBERTY) — oral GnRH-antagonist combo cut fibroid-associated heavy bleeding vs placebo, with add-back protecting bone; the medical alternative to weigh before myomectomy.</div>
+        <div class="src"><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2008283">View source</a></div>
+      </li>
+      <li>
+        <div class="hn"><span class="qsrc">[Urogynecology · OAB]</span> Overactive bladder 5 years after the Mid-Urethral Sling Tensioning (MUST) trial — long-term follow-up on how sling tension relates to persistent/de novo OAB; informs pre-op counseling on storage symptoms.</div>
+        <div class="src"><a href="https://pubmed.ncbi.nlm.nih.gov/42149649/">View source</a></div>
+      </li>
+      <li>
+        <div class="hn"><span class="qsrc">[AAGL · ERAS]</span> Enhanced Recovery &amp; Surgical Optimization for minimally invasive gyn surgery (AAGL White Paper) — the benign-MIGS playbook (no bowel prep, multimodal analgesia, early feeding) behind same-day discharge.</div>
+        <div class="src"><a href="https://www.jmig.org/article/S1553-4650(20)30385-X/abstract">View source</a></div>
+      </li>
+      <li>
+        <div class="hn"><span class="qsrc">[RCT · Fibroids]</span> Transcervical fibroid ablation vs minimally invasive myomectomy (RCT) — head-to-head recovery after each uterine-preserving surgical option for symptomatic fibroids; informs the device-vs-surgery conversation.</div>
+        <div class="src"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12884227/">View source</a></div>
+      </li>
+      <li>
+        <div class="hn"><span class="qsrc">[JMIG · Endometriosis]</span> Robotic multidisciplinary surgery with multivisceral resection for deep endometriosis — short-term feasibility and safety when a team manages bowel/bladder/ureteral disease in one setting.</div>
+        <div class="src"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12227863/">View source</a></div>
+      </li></ul>
+
+  
+      <div class="comments">
+        <div class="comments-label">Journal Club Discussion Notes</div>
+        <div class="comments-body" contenteditable="true" role="textbox" aria-multiline="true"
+             aria-label="Journal Club Discussion Notes" data-ph="Action items, group consensus, follow-ups…"></div>
+      </div>
+  <p class="note">Comment boxes are editable in the browser and are captured when you print or save as PDF. They are not saved on a server — for a persistent record, print/export after writing.</p>
+</main>
+
+<footer><div class="wrap">
+  <div class="disclaimer"><b>Editorial note &amp; limitations.</b> These summaries are an editorial synthesis drawn from abstracts, conference coverage, and society materials — several full texts were paywalled (flagged per item). They are not clinical guidance. Verify every finding against the primary source and the applicable society guideline before changing practice. An independent educational digest for gynecologists; not affiliated with or endorsed by the named journals or societies.</div>
+  <div class="colophon">
+    <b>Compiled &amp; distributed by Pooja Uppalapati, MD, MBA.</b><br>
+    Benign GYN Surgery Journal Club — An independent monthly journal club for gynecologists. Compiled Friday, June 27, 2026. Sources captured 2026-06-27.<br>
+    Available as website, PDF, and Word — all generated from one content source.
+  </div>
+</div></footer>
+
+</body>
+</html>
