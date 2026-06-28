@@ -61,7 +61,11 @@ const html = `<!DOCTYPE html>
 <body>
 <header><div class="wrap">
   <h1>GYN Journal Clubs</h1>
-  <div class="org">Past Issues</div>
+  <div class="org">Past Issues &amp; Downloads</div>
+  <div style="margin-top:10px;font-size:14px">
+    <a href="../index.html">GYN edition</a> &nbsp;·&nbsp;
+    <a href="../benign-gyn-surgery.html">Benign Surgery edition</a>
+  </div>
 </div></header>
 <div class="wrap">
 ${sections}

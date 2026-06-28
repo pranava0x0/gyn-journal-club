@@ -106,6 +106,9 @@ const html = `<!DOCTYPE html>
 
   .masthead{background:var(--paper);border-bottom:4px solid var(--red)}
   .goldrule{height:3px;background:var(--gold)}
+  .sitenav{background:var(--paper);border-bottom:1px solid var(--rule);text-align:center;padding:9px 12px;font-size:13px}
+  .sitenav a{color:var(--red-dk);font-weight:700;margin:0 10px;text-decoration:none;white-space:nowrap}
+  .sitenav a.cur{color:var(--muted);border-bottom:2px solid var(--red);padding-bottom:2px}
   .masthead .wrap{max-width:var(--maxw);margin:0 auto;padding:22px 22px 16px}
   .masthead h1{margin:0;font-size:38px;letter-spacing:-.01em;color:var(--red-dk);font-weight:800;line-height:1}
   .masthead .org{margin-top:8px;font-size:17px;font-weight:700;color:var(--ink)}
@@ -211,6 +214,11 @@ const html = `<!DOCTYPE html>
   <div class="byline">${esc(meta.byline)}</div>
 </div></header>
 <div class="goldrule" aria-hidden="true"></div>
+<nav class="sitenav">
+  <a href="index.html"${id === "gyn" ? ' class="cur"' : ""}>GYN edition</a>
+  <a href="benign-gyn-surgery.html"${id === "benign-surgery" ? ' class="cur"' : ""}>Benign Surgery edition</a>
+  <a href="issues/index.html">Past issues &amp; downloads</a>
+</nav>
 
 <main>
   <div class="blurb">${esc(meta.blurb)}</div>
